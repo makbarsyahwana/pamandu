@@ -13,7 +13,7 @@ var validator = require('express-validator');
 var multer = require('multer');
 var MongoStore = require('connect-mongo')(session);
 
-mongoose.connect('mongodb://trymongo:trymongo@cluster0-shard-00-00-iwhor.mongodb.net:27017,cluster0-shard-00-01-iwhor.mongodb.net:27017,cluster0-shard-00-02-iwhor.mongodb.net:27017/trymongo?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin');
+mongoose.connect('mongodb://makbarsyahwana:nrgm4113412s@ds143900.mlab.com:43900/pamandu');
 
 var index = require('./routes/index');
 var userRoutes = require('./routes/user');
