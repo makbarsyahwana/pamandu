@@ -15,13 +15,13 @@ router.get('/', function(req, res, next) {
 	});
 });
 
-/*router.get('/:title', function(req, res, next) {
+router.get('/:title', function(req, res, next) {
 	Product.findOne({ "title": req.params.title }, function(err, doc) {
 		if (err) throw err;
 		res.render('layouts/trip', { product: doc });
 	});
 });
-*/
+
 router.post('/add-to-cart/:id', function(req, res, next) {
 	var productId = req.params.id;
 	var cart = new Cart(req.session.cart ? req.session.cart : {});

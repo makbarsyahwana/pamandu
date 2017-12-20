@@ -22,11 +22,10 @@ router.get('/signin', function(req, res, next) {
 	res.render('user/signin', {csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0});
 });
 
-router.post('/signin', passport.authenticate('local.signin', {
-	successRedirect: '/',
-	failureRedirect: '/user/signin',
-	failureFlash: true
-}));
+router.post('/signin', passport.authenticate('local.signin', { session: true }),
+	function(req, res){
+		res.json(req.user._id);
+});
 
 router.get('/logout', function(req, res, next) {
 	req.logout();
