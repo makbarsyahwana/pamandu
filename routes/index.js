@@ -39,7 +39,7 @@ router.post('/add-to-cart/:id', function(req, res, next) {
 
 router.get('/cart', function(req, res, next) {
 	if (!req.session.cart) {
-		return res.render('shop/shopping-cart', { products: null });
+		return res.render('shoppingcart', { products: null });
 	}
 	var cart = new Cart(req.session.cart);
 	res.render('shoppingcart', {products: cart.generateArray(), totalPrice: cart.totalPrice});
